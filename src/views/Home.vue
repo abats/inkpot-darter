@@ -286,15 +286,27 @@ export default class Home extends Vue {
 
   .blue-column {
     height: 100%;
+    text-align: left;
+    padding-left: 33%;
+    background: navajowhite;
+  }
+
+  button{
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      width: 160px;
+      height: 40px;
+      cursor: pointer;
   }
 
   .green-column {
     height: 100%;
+    background: navajowhite;
   }
 
   .turns{
-    text-align: left;
-    margin: auto;
     max-width: 50%;
   }
 
@@ -303,7 +315,17 @@ export default class Home extends Vue {
     font-weight: bold;
   }
 
+  #dartboard #areas g > *{
+    stroke: silver;
+    stroke-width: 1px;
+    stroke-linejoin: round;
+  }
+
   #dartboard #areas g > *:hover{
     opacity: 0.6;
+    stroke: black;
+    stroke-width:2px;
+    stroke-linejoin: round;
+    cursor: pointer;
   }
 </style>
