@@ -23,6 +23,6 @@ git add -A
 git commit -m 'deploy'
 
 # deploy
-git push -f git@github.com:abats/inkpot-darter.git gh-pages
+git push --set-upstream -f git@github.com:abats/inkpot-darter.git gh-pages
 
 cd -
