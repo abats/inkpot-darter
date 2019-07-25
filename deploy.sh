@@ -19,10 +19,10 @@ cd dist
 
 echo Deploying..
 git init
-git add -A
+git add .
 git commit -m 'deploy'
 
 # deploy
-git push --set-upstream -f git@github.com:abats/inkpot-darter.git gh-pages
+git push -f git@github.com:abats/inkpot-darter.git gh-pages
 
 cd -
