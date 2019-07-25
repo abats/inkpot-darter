@@ -228,15 +228,15 @@ export default class Home extends Vue {
     switch(elementId.substr(0,1)) {
         case 's':
             scoreMultiplier = 1;
-            score = <number><any>elementId.match(/\d+/)[0];
+            score = <number><any>elementId.match(/\d+/)![0];
             break;
         case 'd':
             scoreMultiplier = 2;
-            score = <number><any>elementId.match(/\d+/)[0];
+            score = <number><any>elementId.match(/\d+/)![0];
             break;
         case 't':
             scoreMultiplier = 3;
-            score = <number><any>elementId.match(/\d+/)[0];
+            score = <number><any>elementId.match(/\d+/)![0];
             break;
         case 'O':
             // outer bull no multiplier and 25 points
