@@ -201,7 +201,6 @@ export default class Home extends Vue {
   public attachClickHandlersToDartBoard() {
     this.dartBoardElements!.forEach((element) => {
         element.addEventListener('click', () => {
-            console.log(element.id);
             this.scoreThisTurn += this.interpretElementIdToNumber(element.id);
         });
     });
@@ -228,15 +227,15 @@ export default class Home extends Vue {
     switch (elementId.substr(0, 1)) {
         case 's':
             scoreMultiplier = 1;
-            score = <number><any>elementId.match(/\d+/)![0];
+            score = elementId.match(/\d+/)![0] as any as number;
             break;
         case 'd':
             scoreMultiplier = 2;
-            score = <number><any>elementId.match(/\d+/)![0];
+            score = elementId.match(/\d+/)![0] as any as number;
             break;
         case 't':
             scoreMultiplier = 3;
-            score = <number><any>elementId.match(/\d+/)![0];
+            score = elementId.match(/\d+/)![0] as any as number;
             break;
         case 'O':
             // outer bull no multiplier and 25 points
@@ -253,7 +252,7 @@ export default class Home extends Vue {
   }
 
   public addScoreToThisRound(score: number) {
-    this.scoreThisTurn = this.scoreThisTurn + score; 
+    this.scoreThisTurn = this.scoreThisTurn + score;
   }
 }
 </script>
