@@ -176,8 +176,8 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue";
+import {Component, Vue} from 'vue-property-decorator';
+import HelloWorld from '@/components/HelloWorld.vue';
 
 @Component({
   components: {
@@ -186,34 +186,34 @@ import HelloWorld from "@/components/HelloWorld.vue";
 })
 
 export default class Home extends Vue {
-  dartBoardElements: NodeListOf<Element> | undefined;
-  scoreThisTurn: number = 0;
-  totalLeft: number = 301;
-  turns: string[] = [];
+  public dartBoardElements: NodeListOf<Element> | undefined;
+  public scoreThisTurn: number = 0;
+  public totalLeft: number = 301;
+  public turns: string[] = [];
 
-  mounted() {
-    this.dartBoardElements = document.querySelectorAll("#dartboard #areas g *");
+  public mounted() {
+    this.dartBoardElements = document.querySelectorAll('#dartboard #areas g *');
     if (this.dartBoardElements.length > 0) {
         this.attachClickHandlersToDartBoard();
     }
   }
 
-  attachClickHandlersToDartBoard() {
+  public attachClickHandlersToDartBoard() {
     this.dartBoardElements!.forEach((element) => {
-        element.addEventListener("click", () => {
-            console.log(element['id']);
-            this.scoreThisTurn += this.interpretElementIdToNumber(element['id']);
+        element.addEventListener('click', () => {
+            console.log(element.id);
+            this.scoreThisTurn += this.interpretElementIdToNumber(element.id);
         });
     });
   }
 
-  addTurn() {
+  public addTurn() {
       this.turns.push(this.createTurnEntry());
       this.totalLeft -= this.scoreThisTurn;
       this.scoreThisTurn = 0;
   }
 
-  createTurnEntry() {
+  public createTurnEntry() {
       return `${this.totalLeft} - ${this.scoreThisTurn} = ${this.totalLeft - this.scoreThisTurn}`;
   }
 
@@ -221,11 +221,11 @@ export default class Home extends Vue {
    * Turns elements like d12 (double 12) into a correct number (ea. 24);
    * returns the value
    */
-  interpretElementIdToNumber(elementId: string): number {
+  public interpretElementIdToNumber(elementId: string): number {
     let scoreMultiplier: number = 1;
     let score: number = 0;
 
-    switch(elementId.substr(0,1)) {
+    switch (elementId.substr(0, 1)) {
         case 's':
             scoreMultiplier = 1;
             score = <number><any>elementId.match(/\d+/)![0];
@@ -252,8 +252,8 @@ export default class Home extends Vue {
 
   }
 
-  addScoreToThisRound(score: number) {
-    this.scoreThisTurn = this.scoreThisTurn + score;
+  public addScoreToThisRound(score: number) {
+    this.scoreThisTurn = this.scoreThisTurn + score; 
   }
 }
 </script>
