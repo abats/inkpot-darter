@@ -20,10 +20,6 @@
         </ol>
       </div>
       <div class="darts-301-right">
-        <div class="darts-button-wrapper">
-          <button disabled>Undo</button>
-          <button disabled>Undo</button>
-        </div>
         <svg
           id="dartboard"
           xmlns="http://www.w3.org/2000/svg"
@@ -436,6 +432,11 @@ export default class Home extends Vue {
   }
 
   public getCheckout(scoreLeft: number) {
+    if (scoreLeft < 40){
+      this.checkOut = 'Use your brain';
+      return;
+    }
+
     let checkouts: any = {
       170: "T20	+T20	+Bull",
       167: "T20	+T19	+Bull",
@@ -566,6 +567,7 @@ export default class Home extends Vue {
       this.checkOut = 'No checkout';
     }
 
+
   }
 }
 </script>
@@ -584,7 +586,6 @@ export default class Home extends Vue {
 .darts-301 {
   display: flex;
   flex-wrap: wrap;
-  height: 86vh;
 }
 
 .darts-301-left,
@@ -599,6 +600,7 @@ export default class Home extends Vue {
 .darts-301-left {
   text-align: left;
   padding-left: 50px;
+  flex: 1 0 39%;
 }
 .darts-301-right {
   flex: 1 0 60%;
@@ -614,7 +616,8 @@ export default class Home extends Vue {
 
 .score-number {
   margin-left: 12px;
-  font-size: 32px;
+  font-size: 24px;
+  width: 60px;
 }
 
 .total-left {
@@ -627,7 +630,7 @@ export default class Home extends Vue {
 
 .total-left-number {
   margin-left: 12px;
-  font-size: 32px;
+  font-size: 24px;
 }
 
 button {

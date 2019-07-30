@@ -42,7 +42,7 @@ body{
 }
 
 .dart-wrap{
-  min-height: 100vh;
+  min-height: 99vh;
   display: flex;
   flex-direction: column;
 }
