@@ -52,6 +52,7 @@ body{
   font-size: 24px;
   text-transform: uppercase;
   color: #484646;
+  padding-top: 10px;
 }
 
 .dart-content {
