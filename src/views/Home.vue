@@ -377,6 +377,7 @@ export default class Home extends Vue {
     this.dartBoardElements!.forEach(element => {
       element.addEventListener("click", () => {
         this.scoreThisTurn += this.interpretElementIdToNumber(element.id);
+        this.getCheckout(this.totalLeft - this.scoreThisTurn);
       });
     });
   }
