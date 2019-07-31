@@ -1,7 +1,15 @@
 <template>
   <div id="app">
     <div class="dart-wrap">
-      <header class="dart-header">Inkpot darter</header>
+
+      <header class="dart-header">
+        Inkpot darter
+        <nav class="nav">
+          <router-link to="/darts301">301</router-link> |
+          <router-link to="/cricket">Cricket</router-link>
+        </nav>
+      </header>
+
       <section class="dart-content">
         <div class="dart-columns">
           <div class="dart-main">
@@ -9,15 +17,17 @@
           </div>
         </div>
       </section>
+
     </div>
   </div>
 </template>
 
 <style>
 
-body{
+html, body {
+  height: 100%;
   background-color: navajowhite;
-   margin: 0;
+  margin: 0;
 }
 
 #app {
@@ -26,30 +36,28 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-#nav a.router-link-exact-active {
+.nav {
+  float: left;
+  margin-left: 50px;
+}
+
+.nav a.router-link-exact-active {
   color: #42b983;
 }
 
 .dart-wrap{
-  min-height: 99vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.dart-header, .dart-footer{
-  height: 50px;
-  font-size: 24px;
+.dart-header{
+  font-size: 22px;
   text-transform: uppercase;
   color: #484646;
   padding-top: 10px;
